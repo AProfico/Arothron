@@ -1,0 +1,27 @@
+Package: Arothron
+Type: Package
+Title: R functions for Geometric Morphometrics Analyses
+Version: 1.0.0
+Author: Antonio Profico, Alessio Veneziano, Marina Melchionna, Pasquale Raia
+Maintainer: Antonio Profico <antonio.profico@uniroma1.it> 
+Description: Tools for Geometric Morphometrics. The package includes tools of Virtual Anthropology to build virtual cavities as endocasts, to align two disarticulated models belonging to the same specimen, and functions to import and export format files into another format.
+Depends:
+    R (>= 3.4.3)
+Imports:
+    compositions (>= 1.40-1),
+    doParallel (>= 1.0.11),
+    foreach (>= 1.4.4),
+    geometry (>= 0.3-6),
+    graphics(>= 3.4.3),
+    grDevices(>= 3.4.3),
+    Morpho (>= 2.5.1),
+    rgl (>= 0.93.963),
+    Rvcg (>= 0.17),
+    stats (>= 3.4.3),
+    stringr (>= 1.3.0),
+    utils (>= 3.4.3),
+    vegan (>= 2.4-5)
+License: GPL-2
+Encoding: UTF-8
+LazyLoad: yes
+RoxygenNote: 6.0.1.9000

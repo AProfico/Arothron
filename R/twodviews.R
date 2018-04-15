@@ -15,7 +15,7 @@
 #' library(Morpho)
 #' #load the 2D primate dataset
 #' data("Lset2D_list")
-#' #combine the 2D datasets and PCA
+#' #PCA on combined 2D datasets 
 #' combin2D<-twodviews(Lset2D_list,scale=TRUE,vector=c(1:5))
 #' #plot of the first two Principal Components
 #' plot(combin2D$PCscores)
@@ -54,6 +54,7 @@ twodviews<-function(twodlist,scale=TRUE,vector=c(1:5)){
   lv <- length(values)
   PCs <- Rots_pca$rotation[, 1:lv]
   PCscores<-as.matrix(Rots_pca$x[, 1:lv])
+  rownames(PCscores)<-names(twodlist[[1]])
   Variance<-cbind(sqrt(eigv),eigv/sum(eigv),cumsum(eigv)/sum(eigv))*100
   Variance<-Variance[1:lv,]
   size<-rowMeans(sizes)

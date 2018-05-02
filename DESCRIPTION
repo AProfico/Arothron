@@ -15,7 +15,6 @@ Imports:
     geometry (>= 0.3-6),
     graphics(>= 3.4.0),
     grDevices(>= 3.4.0),
-    Morpho (>= 2.6.0),
     rgl (>= 0.93.0),
     Rvcg (>= 0.17),
     stats (>= 3.4.0),

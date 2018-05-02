@@ -9,7 +9,6 @@
 #' @import geometry
 #' @import graphics
 #' @import grDevices
-#' @import Morpho
 #' @import rgl
 #' @import Rvcg
 #' @import stats

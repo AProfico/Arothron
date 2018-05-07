@@ -20,13 +20,12 @@
 #' @export
 
 twodvarshape<-function(twodviews_ob,scores,PC,view){
-  
   pos_pcs<-twodviews_ob$dims*2
   if(view==1){
     sel_pcs<-1:pos_pcs[view]}
-  if(view==(length(view))){
+  if(view!=1 & view!=length(pos_pcs)){
     sel_pcs<-(sum(pos_pcs[1:(view-1)])+1): sum(pos_pcs[1:view])}
-  if(view!=1 &view!=(length(view))){
+  if(view!=1 & view==length(pos_pcs)){
     sel_pcs<-(sum(pos_pcs[1:(view-1)])+1):(sum(pos_pcs[1:(view-1)])+pos_pcs[view])
   }
   # mshape<-twodviews_ob$mshapes[[view]]*sqrt(twodviews_ob$dims[view]*2)
@@ -35,3 +34,4 @@ twodvarshape<-function(twodviews_ob,scores,PC,view){
   mat<-showPC(scores,PCs,mshape)
   return(mat)
 }
+

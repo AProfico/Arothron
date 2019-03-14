@@ -6,7 +6,8 @@
 \usage{
 ext.int.mesh(mesh, views = 20, dist.sphere = 3, param1 = 2.5,
   param2 = 10, default = TRUE, import_pov, matrix_pov, expand = 1,
-  scale.factor, method = "calse", start.points = 250, num.cores = NULL)
+  scale.factor, method = "calse", start.points = 250,
+  num.cores = NULL)
 }
 \arguments{
 \item{mesh}{object of class mesh3d}

@@ -37,7 +37,7 @@ Calculates the PCscores of the 2Dcomp matrix.  an array in a list storing each e
 library(Morpho)
 #load the 2D primate dataset
 data("Lset2D_list")
-#combine the 2D datasets and PCA
+#PCA on combined 2D datasets 
 combin2D<-twodviews(Lset2D_list,scale=TRUE,vector=c(1:5))
 #plot of the first two Principal Components
 plot(combin2D$PCscores)

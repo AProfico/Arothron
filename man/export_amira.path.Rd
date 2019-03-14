@@ -4,8 +4,8 @@
 \alias{export_amira.path}
 \title{export_amira.path}
 \usage{
-export_amira.path(vertices, filename, Lines = c(1:(dim(vertices)[1] - 1) - 1,
-  -1), path)
+export_amira.path(vertices, filename, Lines = c(1:(dim(vertices)[1] - 1)
+  - 1, -1), path)
 }
 \arguments{
 \item{vertices}{numeric: a kx3 matrix}

@@ -4,8 +4,8 @@
 \alias{dta}
 \title{dta}
 \usage{
-dta(RM_sample, mod_1, mod_2, pairs_1, pairs_2, DM_mesh_1, DM_mesh_2, DM_set_1,
-  DM_set_2, method = c("euclidean"))
+dta(RM_sample, mod_1, mod_2, pairs_1, pairs_2, DM_mesh_1, DM_mesh_2,
+  DM_set_1, DM_set_2, method = c("euclidean"))
 }
 \arguments{
 \item{RM_sample}{3D array: 3D landmark configurations of the reference sample}

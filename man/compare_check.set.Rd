@@ -4,7 +4,8 @@
 \alias{compare_check.set}
 \title{compare_check.set}
 \usage{
-compare_check.set(RM_set_1, RM_set_2, DM_set_1, DM_set_2, DM_mesh_1, DM_mesh_2)
+compare_check.set(RM_set_1, RM_set_2, DM_set_1, DM_set_2, DM_mesh_1,
+  DM_mesh_2)
 }
 \arguments{
 \item{RM_set_1}{matrix: 3D landmark set of the first module acquired on the reference model}

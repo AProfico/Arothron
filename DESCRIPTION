@@ -16,7 +16,7 @@ Imports:
     graphics(>= 3.4),
     grDevices(>= 3.4),
     Morpho (>= 2.5),
-    nat (>=1.8.11),
+    nat (>= 1.8.11),
     parallel,
     rgl (>= 0.93),
     Rvcg (>= 0.17),

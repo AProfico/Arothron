@@ -6,7 +6,7 @@ Maintainer: Antonio Profico <antonio.profico@uniroma1.it>
 Description: Tools for geometric morphometric analysis.
 Depends: R (>= 3.2.0)
 Imports:
-abind (>= 1.4),
+abind,
 alphashape3d (>= 1.3),
 compositions (>= 1.40),
 doParallel (>= 1.0),

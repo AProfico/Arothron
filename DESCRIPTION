@@ -9,7 +9,8 @@ Description: Tools for geometric morphometric analysis.
     to build virtual cavities as endocast (Profico et al, 2017 <doi:10.13140/RG.2.2.32524.00640>),
     and functions to import and export the coordinates of landmarks and 3D paths into
     'landmarkAscii' and 'am' format files.
-Depends: R (>= 3.4.0)
+Depends:
+    R (>= 3.2.0)
 Imports:
     abind (>= 1.4),
     alphashape3d (>= 1.3),

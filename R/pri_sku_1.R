@@ -1,8 +1,8 @@
 #' @title example dataset
-#' @description list of 3D meshes containing 10 primates' skulls
-#' @name primate_skulls
+#' @description list of 3D meshes containing 5 primates' skulls
+#' @name pri_sku_1
 #' @docType data
 #' @author Antonio Profico, Alessio Veneziano, Costantino Buzi, Marina Melchionna, Pasquale Raia
 #' @keywords Arothron
-#' @usage data(primate_skulls)
+#' @usage data(pri_sku_1)
 NULL

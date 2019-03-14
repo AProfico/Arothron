@@ -7,6 +7,7 @@
 #' @return matt numeric: a kx3 matrix with points coordinates 
 #' @author Antonio Profico, Alessio Veneziano, Marina Melchionna, Pasquale Raia
 #' @examples
+#' \dontrun{
 #' ## Create and plot a 3D curve
 #' require(compositions)
 #' curve_3D<-cbind(1:10,seq(1,5,length=10),rnorm(10,sd = 0.2))
@@ -14,6 +15,7 @@
 #' rgl.close()
 #' ## Create and plot the new 3D curve (with intermediate points)
 #' dec_curve_3D<-dec.curve(curve_3D, 2, plot = TRUE)
+#' }
 #' @export
 dec.curve<-function(mat_input,mag,plot=TRUE){
 matt<-mat_input

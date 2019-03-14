@@ -4,7 +4,7 @@ Version: 1.1.9
 Author: Antonio Profico, Alessio Veneziano, Costantino Buzi, Marina Melchionna, Pasquale Raia
 Maintainer: Antonio Profico <antonio.profico@uniroma1.it>
 Description: Tools for geometric morphometric analysis.
-Depends: R (>= 3.2.0)
+Depends: R (>= 3.2.4)
 Imports:
 abind,
 alphashape3d (>= 1.3),

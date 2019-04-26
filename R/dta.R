@@ -56,60 +56,56 @@
 #' plot3D(AM_set,bbox=FALSE,add=TRUE)
 #' @export
 
-dta<-function(RM_sample,mod_1,mod_2,pairs_1,pairs_2,
-              DM_mesh_1,DM_mesh_2,DM_set_1,DM_set_2,
-              method=c("euclidean")){
-  eu_dists<-NULL
-  eu_procr<-NULL
-  setarray<-array(NA,dim=dim(RM_sample))
-  for(i in 1:dim(RM_sample)[3]){
-    RM_set_i<-RM_sample[,,i]
-    
-    if(is.null(pairs_1)==FALSE & is.null(pairs_2)==FALSE){
-      pairedLM<-rbind(pairs_1,pairs_2)
-      symm.set.i<-symmetrize(RM_set_i,pairedLM=pairedLM)}
-    else{
-      symm.set.i=RM_set_i
-    }  
-    RM_set_1<-symm.set.i[mod_1,]  
-    RM_set_2<-symm.set.i[mod_2,]
-    
-    AM_i<-compare_check.set(RM_set_1=RM_set_1,RM_set_2=RM_set_2,
-                            DM_set_1=DM_set_1,DM_set_2=DM_set_2,
-                            DM_mesh_1=DM_mesh_1,DM_mesh_2=DM_mesh_2)
-    
-    
-    setarray[,,i]=AM_i$AM_model$yrot
-    eu_dists[i]<-AM_i$eucl_dist
-    eu_procr[i]<-AM_i$procr_dist
-    
+dta<-function (RM_sample, mod_1, mod_2, pairs_1, pairs_2, DM_mesh_1, 
+          DM_mesh_2, DM_set_1, DM_set_2, method = c("euclidean")) 
+{
+  eu_dists <- NULL
+  eu_procr <- NULL
+  setarray <- array(NA, dim = dim(RM_sample))
+  for (i in 1:dim(RM_sample)[3]) {
+    RM_set_i <- RM_sample[, , i]
+    if (is.null(pairs_1) == FALSE & is.null(pairs_2) == FALSE) {
+      pairedLM <- rbind(pairs_1, pairs_2)
+      symm.set.i <- symmetrize(RM_set_i, pairedLM = pairedLM)
+    }
+    else {
+      symm.set.i = RM_set_i
+    }
+    RM_set_1 <- symm.set.i[mod_1, ]
+    RM_set_2 <- symm.set.i[mod_2, ]
+    AM_i <- compare_check.set(RM_set_1 = RM_set_1, RM_set_2 = RM_set_2, 
+                              DM_set_1 = DM_set_1, DM_set_2 = DM_set_2, DM_mesh_1 = DM_mesh_1, 
+                              DM_mesh_2 = DM_mesh_2)
+    setarray[, , i] = AM_i$AM_model$yrot
+    eu_dists[i] <- AM_i$eucl_dist
+    eu_procr[i] <- AM_i$procr_dist
   }
-  if(method=="euclidean"){
-    i=which.min(eu_dists)}
-  if(method=="procrustes"){
-    i=which.min(eu_procr)}
+  if (method == "euclidean") {
+    i = which.min(eu_dists)
+  }
+  if (method == "procrustes") {
+    i = which.min(eu_procr)
+  }
+  RM_set_i <- RM_sample[, , i]
+  pairedLM <- rbind(pairs_1, pairs_2)
+  if (is.null(pairs_1) == FALSE & is.null(pairs_2) == FALSE){
+  symm.set.i <- symmetrize(RM_set_i, pairedLM = pairedLM)
+  }else{symm.set.i=RM_set_i}
   
-  RM_set_i<-RM_sample[,,i]
-  pairedLM<-rbind(pairs_1,pairs_2)
-  symm.set.i<-symmetrize(RM_set_i,pairedLM=pairedLM)
-  
-  RM_set_1<-symm.set.i[mod_1,]  
-  RM_set_2<-symm.set.i[mod_2,]
-  
-  AM_project<-compare_check.set(RM_set_1=RM_set_1,RM_set_2=RM_set_2,
-                                DM_set_1=DM_set_1,DM_set_2=DM_set_2,
-                                DM_mesh_1=DM_mesh_1,DM_mesh_2=DM_mesh_2)
-  AM_model<-AM_project$AM_model$mesh
-  AM_set<-AM_project$AM_model$yrot
-  
-  if(method=="euclidean"){
-    distance=eu_dists[i]}
-  if(method=="procrustes"){
-    distance=eu_procr[i]}
-  
-  
-  out<-list("AM_mesh"=AM_model,"AM_set"=AM_set,
-            "AM_id"=dimnames(RM_sample)[[3]][i],
-            "AM_SF_1"=AM_project$SF1,"AM_SF_2"=AM_project$SF2,"distance"=distance,
-            "tot_proc"=eu_procr,"tot_eucl"=eu_dists,"setarray"=setarray)
+  RM_set_1 <- symm.set.i[mod_1, ]
+  RM_set_2 <- symm.set.i[mod_2, ]
+  AM_project <- compare_check.set(RM_set_1 = RM_set_1, RM_set_2 = RM_set_2, 
+                                  DM_set_1 = DM_set_1, DM_set_2 = DM_set_2, DM_mesh_1 = DM_mesh_1, 
+                                  DM_mesh_2 = DM_mesh_2)
+  AM_model <- AM_project$AM_model$mesh
+  AM_set <- AM_project$AM_model$yrot
+  if (method == "euclidean") {
+    distance = eu_dists[i]
+  }
+  if (method == "procrustes") {
+    distance = eu_procr[i]
+  }
+  out <- list(AM_mesh = AM_model, AM_set = AM_set, AM_id = dimnames(RM_sample)[[3]][i], 
+              AM_SF_1 = AM_project$SF1, AM_SF_2 = AM_project$SF2, distance = distance, 
+              tot_proc = eu_procr, tot_eucl = eu_dists, setarray = setarray)
 }

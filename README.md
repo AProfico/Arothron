@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1243783.svg)](https://doi.org/10.5281/zenodo.1243783)
+
 # Arothron
 Tools for Geometric Morphometrics. The package includes tools of Virtual Anthropology to build virtual cavities as endocasts, to align two disarticulated models belonging to the same specimen, and functions to import and export format files into another format.
 
